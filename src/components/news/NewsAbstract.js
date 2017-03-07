@@ -16,10 +16,10 @@ class NewsAbstract extends Component {
 
     return (
       <div className="news-abstract row">
-        <div className="news-abstract-thumbnail two columns">
+        <div className="news-abstract-thumbnail four columns">
           { imageElement }
         </div>
-        <div className="news-abstract-details ten columns">
+        <div className="news-abstract-details eight columns">
           <div className="news-abstract-title" data-role={ articleUrl } onClick={ this.props.onclick }>
             { title }
           </div>

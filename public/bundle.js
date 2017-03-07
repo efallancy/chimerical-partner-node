@@ -11187,7 +11187,6 @@ var News = function (_Component) {
 
       _Util2.default.getNewsArticleFromNYTimes(url).then(function (response) {
         if (!response.data["error"]) {
-          console.log(_this4);
 
           _this4.setState({
             articleDisplay: true,
@@ -11328,12 +11327,12 @@ var NewsAbstract = function (_Component) {
         { className: "news-abstract row" },
         _react2.default.createElement(
           "div",
-          { className: "news-abstract-thumbnail two columns" },
+          { className: "news-abstract-thumbnail four columns" },
           imageElement
         ),
         _react2.default.createElement(
           "div",
-          { className: "news-abstract-details ten columns" },
+          { className: "news-abstract-details eight columns" },
           _react2.default.createElement(
             "div",
             { className: "news-abstract-title", "data-role": articleUrl, onClick: this.props.onclick },
@@ -11463,11 +11462,7 @@ var NewsDisplay = function (_Component) {
       return _react2.default.createElement(
         "div",
         { className: "news-display eight columns" },
-        _react2.default.createElement(
-          "div",
-          { className: "article-title" },
-          title
-        ),
+        _react2.default.createElement("div", { className: "article-title", dangerouslySetInnerHTML: { __html: title } }),
         _react2.default.createElement(
           "div",
           { className: "article-date" },
@@ -11489,7 +11484,7 @@ var NewsDisplay = function (_Component) {
           _react2.default.createElement(
             "a",
             { href: url, target: "_blank" },
-            "See full article..."
+            "See original article..."
           )
         )
       );

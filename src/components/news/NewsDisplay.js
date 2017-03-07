@@ -20,9 +20,7 @@ class NewsDisplay extends Component {
 
     return (
       <div className="news-display eight columns">
-        <div className="article-title">
-          { title }
-        </div>
+        <div className="article-title" dangerouslySetInnerHTML={ { __html: title } } />
         <div className="article-date">
           { date }
         </div>
@@ -33,7 +31,7 @@ class NewsDisplay extends Component {
           { contents }
         </div>
         <div className="article-full">
-          <a href={ url } target="_blank">See full article...</a>
+          <a href={ url } target="_blank">See original article...</a>
         </div>
       </div>
     )

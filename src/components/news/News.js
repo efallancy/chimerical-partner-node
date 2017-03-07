@@ -63,8 +63,7 @@ class News extends Component {
     Util.getNewsArticleFromNYTimes( url )
         .then( ( response ) => {
           if( !response.data[ "error" ] ) {
-            console.log( this );
-
+            
             this.setState( {
               articleDisplay: true,
               articleDetails: response.data

@@ -1,7 +1,3 @@
-div {
-  background-color: deeppink;
-}
-
 .news-list {
   height: 100vh;
   overflow: auto;
@@ -36,6 +32,10 @@ div {
 .news-abstract-title:hover {
   cursor: pointer;
   text-decoration:underline;
+}
+
+.unsplash img {
+  width: 100%;
 }
 
 @media (max-width: 550px) {
