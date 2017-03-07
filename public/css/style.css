@@ -1,0 +1,45 @@
+div {
+  background-color: deeppink;
+}
+
+.news-list {
+  height: 100vh;
+  overflow: auto;
+}
+
+.news-display {
+  height: 100vh;
+  overflow: auto;
+}
+
+.news-header {
+  text-align: center;
+}
+
+.news-abstract {
+  height: 100%;
+  margin: 1px 0;
+}
+
+.news-abstract-thumbnail {
+  text-align: center;
+}
+
+.news-abstract-thumbnail img {
+  width: 80%;
+}
+
+.news-abstract-details {
+  padding: 15px;
+}
+
+.news-abstract-title:hover {
+  cursor: pointer;
+  text-decoration:underline;
+}
+
+@media (max-width: 550px) {
+  .news-display {
+    display: none;
+  }
+}
