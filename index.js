@@ -104,6 +104,6 @@ app.get( "/news/categories", function( req, res ) {
 
 } );
 
-app.listen( "8080", function() {
-  console.log( "listening in port 8080" );
+app.listen( process.env.PORT || 8080, function() {
+  console.log( "listening in port " + ( process.env.PORT || 8080 ) );
 } );
