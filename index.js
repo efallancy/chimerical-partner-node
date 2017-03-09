@@ -3,9 +3,7 @@ var app = express();
 var axios = require( 'axios' );
 var request = require( "request" );
 var cheerio = require( "cheerio" );
-var server = require( "http" ).Server( app );
 
-console.log( "PORT", process.env.PORT );
 // Configuration on hot-reloader; to be use in conjunction with Express
 if( process.env.NODE_ENV !== "production" ) {
   // Only require when in Development
@@ -106,6 +104,6 @@ app.get( "/news/categories", function( req, res ) {
 
 } );
 
-server.listen( process.env.PORT || 8080, function() {
+app.listen( process.env.PORT || 8080, function() {
   console.log( "listening in port " + ( process.env.PORT || 8080 ) );
 } );
