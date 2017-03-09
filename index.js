@@ -3,14 +3,15 @@ var app = express();
 var axios = require( 'axios' );
 var request = require( "request" );
 var cheerio = require( "cheerio" );
-var webpack = require( "webpack" );
-var webpackDevMiddleware = require( "webpack-dev-middleware" );
-var webpackHotMiddleware = require( "webpack-hot-middleware" );
-var webpackConfig = require( "./webpack.config.js" );
-var compiler = webpack( webpackConfig );
 
 // Configuration on hot-reloader; to be use in conjunction with Express
 if( process.env.NODE_ENV !== "production" ) {
+  // Only require when in Development
+  var webpack = require( "webpack" );
+  var webpackDevMiddleware = require( "webpack-dev-middleware" );
+  var webpackHotMiddleware = require( "webpack-hot-middleware" );
+  var webpackConfig = require( "./webpack.config.js" );
+  var compiler = webpack( webpackConfig );
 
   // Define the use of webpack-dev-middleware
   app.use( webpackDevMiddleware( compiler, {
