@@ -63,7 +63,7 @@ class News extends Component {
     Util.getNewsArticleFromNYTimes( url )
         .then( ( response ) => {
           if( !response.data[ "error" ] ) {
-            
+
             this.setState( {
               articleDisplay: true,
               articleDetails: response.data
@@ -75,6 +75,10 @@ class News extends Component {
   }
 
   render() {
+    const unsplashStyle = {
+      backgroundImage: 'url( "https://source.unsplash.com/random" )'
+    };
+
     let newsabstract = ( <div>Rendering news</div> );
 
     if( this.state.data ) {
@@ -114,11 +118,7 @@ class News extends Component {
             { newsabstract }
           </div>
         </div>
-        <div className="news-display eight columns">
-          <div className="unsplash">
-            <img src="https://source.unsplash.com/random" />
-          </div>
-        </div>
+        <div className="news-display eight columns" style={ unsplashStyle } />
       </div>
     )
 

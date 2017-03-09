@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import News from "../news/News";
-import Display from "../display/Display";
 
 class App extends Component {
   render() {

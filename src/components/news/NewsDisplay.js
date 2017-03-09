@@ -20,18 +20,20 @@ class NewsDisplay extends Component {
 
     return (
       <div className="news-display eight columns">
-        <div className="article-title" dangerouslySetInnerHTML={ { __html: title } } />
-        <div className="article-date">
-          { date }
-        </div>
-        <div className="article-author">
-          { authors }
-        </div>
-        <div className="article-content">
-          { contents }
-        </div>
-        <div className="article-full">
-          <a href={ url } target="_blank">See original article...</a>
+        <div className="news-display-wrapper">
+          <div className="article-title" dangerouslySetInnerHTML={ { __html: title } } />
+          <div className="article-author">
+            By { authors }
+          </div>
+          <div className="article-date">
+            { date }
+          </div>
+          <div className="article-content">
+            { contents }
+          </div>
+          <div className="article-full">
+            <a href={ url } target="_blank">See original article...</a>
+          </div>
         </div>
       </div>
     )

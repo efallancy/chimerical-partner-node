@@ -3,11 +3,42 @@ var app = express();
 var axios = require( 'axios' );
 var request = require( "request" );
 var cheerio = require( "cheerio" );
+var webpack = require( "webpack" );
+var webpackDevMiddleware = require( "webpack-dev-middleware" );
+var webpackHotMiddleware = require( "webpack-hot-middleware" );
+var webpackConfig = require( "./webpack.config.js" );
+var compiler = webpack( webpackConfig );
 
-app.use( express.static( "public" ) );
+// Configuration on hot-reloader; to be use in conjunction with Express
+if( process.env.NODE_ENV !== "production" ) {
 
+  // Define the use of webpack-dev-middleware
+  app.use( webpackDevMiddleware( compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    stats: {
+      colors: true
+    }
+  } ) );
+
+  // Define the use of webpack-hot-middleware
+  app.use( webpackHotMiddleware( compiler, {
+    log: console.log
+  } ) );
+
+}
+
+// Expose the js and css folder...
+app.use( "/js", express.static( __dirname + "/public/js" ) );
+app.use( "/css", express.static( __dirname + "/public/css" ) );
+
+// Display the main page
+app.get( "/", function( req, res ) {
+  res.sendFile( __dirname + "/public/index.html" );
+})
+
+// Get the full detail of the particular article
 app.get( "/news/result", function( req, res ) {
-  
+
   var urlEndpoint = req.query.url;
 
   var options = {
@@ -55,6 +86,7 @@ app.get( "/news/result", function( req, res ) {
 
 } );
 
+// Route to get the news categories and its abstract details
 app.get( "/news/categories", function( req, res ) {
   // Retrieving the details of the news
   var categories = req.query.categories;
