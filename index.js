@@ -3,7 +3,7 @@ var app = express();
 var axios = require( 'axios' );
 var request = require( "request" );
 var cheerio = require( "cheerio" );
-
+console.log( "PORT", process.env.PORT );
 // Configuration on hot-reloader; to be use in conjunction with Express
 if( process.env.NODE_ENV !== "production" ) {
   // Only require when in Development
