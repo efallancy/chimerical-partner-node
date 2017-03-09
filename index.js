@@ -90,6 +90,9 @@ app.get( "/news/result", function( req, res ) {
 app.get( "/news/categories", function( req, res ) {
   // Retrieving the details of the news
   var categories = req.query.categories;
+
+  // Get the API key from the The New York Times Developers website.
+  // Then go to your bash profile to set the API key to a variable (For Mac user)
   var nykeys = process.env.NY_TIMES_TOP_STORIES_KEY;
   var endpoint = `https://api.nytimes.com/svc/topstories/v2/${ categories }.json`;
   var url = endpoint + "?apikey=" + nykeys;
