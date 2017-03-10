@@ -5,7 +5,7 @@ var request = require( "request" );
 var cheerio = require( "cheerio" );
 
 // Configuration on hot-reloader; to be use in conjunction with Express
-if( process.env.NODE_ENV !== "production" ) {
+if( process.env.NODE_ENV === "development" ) {
   // Only require when in Development
   var webpack = require( "webpack" );
   var webpackDevMiddleware = require( "webpack-dev-middleware" );

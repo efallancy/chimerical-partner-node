@@ -8,7 +8,7 @@ module.exports = {
   ],
   output: {
     path: "/",
-    publicPath: "http://localhost:8080/js",
+    publicPath: "http://localhost:8080",
     filename: "js/bundle.js"
   },
   plugins: [

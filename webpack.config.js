@@ -1,7 +1,7 @@
 var webpack = require( "webpack" );
 var path = require( "path" );
 var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
-var config = ( process.env.NODE_ENV !== "production" ?
+var config = ( process.env.NODE_ENV === "development" ?
                require( "./config/webpack.dev.config" ) :
                require( "./config/webpack.prod.config" ) );
 
