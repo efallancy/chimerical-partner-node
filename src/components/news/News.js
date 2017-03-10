@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NewsHeader from "./NewsHeader";
-import NewsAbstractList from "./NewsAbstractList";
 import NewsAbstract from "./NewsAbstract";
 import NewsDisplay from "./NewsDisplay";
 import Util from "../../util/Util";
@@ -17,7 +16,8 @@ class News extends Component {
       currentNewsCategory: "",
       data: [],
       articleDisplay: false,
-      articleDetails: {}
+      articleDetails: {},
+      imageFallback : ""
     }
   }
 
@@ -29,6 +29,15 @@ class News extends Component {
           this.setState( {
             currentNewsCategory: response.data[ "section" ],
             data: response.data[ "results" ]
+          } );
+        } );
+
+    // This shall get the image fallback for the thumbnail
+    Util.getGiphyFallbackImage()
+        .then( ( response ) => {
+
+          this.setState( {
+            imageFallback: response.data.data[ "image_original_url" ]
           } );
         } );
   }
@@ -85,6 +94,7 @@ class News extends Component {
       newsabstract = this.state.data.map( ( news, key ) => {
                         return ( <NewsAbstract
                                     news={ news }
+                                    imageFallback={ this.state.imageFallback }
                                     onclick={ this.handleOnClickNewsAbstract.bind( this ) }
                                     key={ key } /> );
                       } );

@@ -12,6 +12,11 @@ const util = {
     let query = `?url=${ url }`;
 
     return axios( endpoint + query );
+  },
+  getGiphyFallbackImage: () => {
+
+    // Make a request to the Giphy API Endpoint
+    return axios( "http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops" );
   }
 };
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Util from "../../util/Util";
 
 class NewsAbstract extends Component {
   render() {
@@ -6,20 +7,18 @@ class NewsAbstract extends Component {
     const title = this.props.news.title;
     const abstract = this.props.news.abstract;
     const author = this.props.news.byline;
-    const imageDetails = totalImages ? this.props.news.multimedia[ totalImages - 1 ].url : "";
+    const imageDetails = totalImages ?
+                         this.props.news.multimedia[ totalImages - 1 ].url :
+                         this.props.imageFallback;
     const articleUrl = this.props.news.url;
 
     let style = {
       backgroundImage: `url( ${ imageDetails } )`
     };
 
-    const imageElement = imageDetails ? ( <div className="news-abstract-thumbnail"
-                                               style={ style }
-                                          /> )
-                                      : ( <div className="news-abstract-thumbnail">
-                                            <span className="nothing-to-see-here">Nothing to see here</span>
-                                          </div>
-                                        );
+    const imageElement = ( <div className="news-abstract-thumbnail"
+                                style={ style }
+                           /> );
 
     return (
       <div className="news-abstract-details" >
