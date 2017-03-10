@@ -31,6 +31,6 @@ To build it, run the command below:
 
 ``` npm run build ```
 
-Using it in production, run the command below:
+To run it in production environment, make sure to run the build first before deploying it or run it in production environment, run the command below:
 
 ``` npm run start ```
