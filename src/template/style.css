@@ -8,6 +8,15 @@
   text-align: center;
 }
 
+.categories-select {
+  text-align: center;
+}
+
+.nytimes-logo {
+  height: 100%;
+  margin: 8% 0;
+}
+
 .news-abstract-details {
   position: relative;
   top: 0;

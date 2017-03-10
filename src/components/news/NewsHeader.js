@@ -6,19 +6,34 @@ class NewsHeader extends Component {
     let categories = this.props.categories;
 
     let categoryElements = categories.map( ( category, key ) => {
-      return (  <option
-                  value = { category }
-                  key   = { key }
-                >
-                  { category }
-                </option> );
+      let value = "";
+      let textDisplay = "";
+
+      for( var identifier in category ) {
+        value = identifier;
+        textDisplay = category[ identifier ];
+      }
+
+      return (
+        <option value={ value } key={ key }>
+          { textDisplay }
+        </option>
+      );
+
     } );
 
     return (
-      <div className="news-header">
-        <select name="categories" onChange={ this.props.onchange }>
+      <div className="news-header row">
+      <div className="two columns">
+        <img src="https://static01.nytimes.com/packages/images/developer/logos/poweredby_nytimes_30a.png"
+             className="nytimes-logo"
+        />
+      </div>
+      <div className="ten columns">
+        <select className="u-full-width categories-select" name="categories" onChange={ this.props.onchange }>
           { categoryElements }
         </select>
+      </div>
       </div>
     )
   }

@@ -10,35 +10,35 @@ class News extends Component {
 
     // Having to store the categories in a variable would make it easier to maintain
     let categories = [
-                        "home",
-                        "opinion",
-                        "world",
-                        "national",
-                        "politics",
-                        "upshot",
-                        "nyregion",
-                        "business",
-                        "technology",
-                        "science",
-                        "health",
-                        "sports",
-                        "arts",
-                        "books",
-                        "movies",
-                        "theater",
-                        "sundayreview",
-                        "fashion",
-                        "tmagazine",
-                        "food",
-                        "travel",
-                        "magazine",
-                        "realestate",
-                        "automobiles",
-                        "obituaries",
-                        "insider"
+                        { "home": "Home" },
+                        { "opinion": "Opinion" },
+                        { "world": "World" },
+                        { "national": "National" },
+                        { "politics": "Politics" },
+                        { "upshot": "Up shot" },
+                        { "nyregion": "NY Region" },
+                        { "business": "Business" },
+                        { "technology": "Technology" },
+                        { "science": "Science" },
+                        { "health": "Health" },
+                        { "sports": "Sports" },
+                        { "arts": "Arts" },
+                        { "books": "Books" },
+                        { "movies": "Movies" },
+                        { "theater": "Theater" },
+                        { "sundayreview": "Sunday Review" },
+                        { "fashion": "Fashion" },
+                        { "tmagazine": "Times Magazine" },
+                        { "food": "Food" },
+                        { "travel": "Travel" },
+                        { "magazine": "Magazine" },
+                        { "realestate": "Real Estate" },
+                        { "automobiles": "Automobiles" },
+                        { "obituaries": "Obituaries" },
+                        { "insider": "Insider" }
                       ];
 
-    // Initialise the state                  
+    // Initialise the state
     this.state = {
       newsCategories: categories,
       currentNewsCategory: "",
@@ -50,8 +50,15 @@ class News extends Component {
   }
 
   componentWillMount() {
+    // Getting the key identifier to be used for NYTimes API endpoint
+    let initial = "";
+
+    for( var identifier in this.state.newsCategories[ 0 ] ) {
+      initial = identifier;
+    }
+
     // This will initially make a request to the NYTimes API to render the news
-    Util.getNewsListFromNYTimes( this.state.newsCategories[ 0 ] )
+    Util.getNewsListFromNYTimes( initial )
         .then( ( response ) => {
 
           this.setState( {
