@@ -16,7 +16,7 @@ const util = {
   getGiphyFallbackImage: () => {
 
     // Make a request to the Giphy API Endpoint
-    return axios( "http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops" );
+    return axios( "https://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC" );
   }
 };
 
