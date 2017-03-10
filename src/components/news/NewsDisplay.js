@@ -40,4 +40,9 @@ class NewsDisplay extends Component {
   }
 }
 
+// Props Validation
+NewsDisplay.propTypes = {
+  article: React.PropTypes.object
+};
+
 export default NewsDisplay;

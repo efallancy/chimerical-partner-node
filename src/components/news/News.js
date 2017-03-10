@@ -9,8 +9,36 @@ class News extends Component {
     super();
 
     // Having to store the categories in a variable would make it easier to maintain
-    let categories = [ "home", "opinion", "world", "national", "politics", "technology" ];
+    let categories = [
+                        "home",
+                        "opinion",
+                        "world",
+                        "national",
+                        "politics",
+                        "upshot",
+                        "nyregion",
+                        "business",
+                        "technology",
+                        "science",
+                        "health",
+                        "sports",
+                        "arts",
+                        "books",
+                        "movies",
+                        "theater",
+                        "sundayreview",
+                        "fashion",
+                        "tmagazine",
+                        "food",
+                        "travel",
+                        "magazine",
+                        "realestate",
+                        "automobiles",
+                        "obituaries",
+                        "insider"
+                      ];
 
+    // Initialise the state                  
     this.state = {
       newsCategories: categories,
       currentNewsCategory: "",

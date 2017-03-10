@@ -24,4 +24,10 @@ class NewsHeader extends Component {
   }
 }
 
+// Props Validation
+NewsHeader.propTypes = {
+  onchange: React.PropTypes.func,
+  categories: React.PropTypes.array
+};
+
 export default NewsHeader;

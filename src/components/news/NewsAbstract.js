@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Util from "../../util/Util";
 
 class NewsAbstract extends Component {
   render() {
@@ -36,5 +35,12 @@ class NewsAbstract extends Component {
     )
   }
 }
+
+// Props Validation
+NewsAbstract.propTypes = {
+  news: React.PropTypes.object,
+  imageFallback: React.PropTypes.string,
+  onclick: React.PropTypes.func
+};
 
 export default NewsAbstract;
