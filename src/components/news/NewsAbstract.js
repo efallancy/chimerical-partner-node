@@ -11,16 +11,22 @@ class NewsAbstract extends Component {
                          this.props.imageFallback;
     const articleUrl = this.props.news.url;
 
-    let style = {
+    const styleAbstractImage = {
       backgroundImage: `url( ${ imageDetails } )`
     };
 
     const imageElement = ( <div className="news-abstract-thumbnail"
-                                style={ style }
+                                style={ styleAbstractImage }
                            /> );
 
+    const colourPalette = [ "#25CED1", "#87B37A", "#EF476F", "#FFD166", "#EF6461", "#30BCED" ];
+
+    const styleColourPalette = {
+      backgroundColor: `${ colourPalette[ Math.floor( Math.random() * colourPalette.length ) ] }`
+    };
+
     return (
-      <div className="news-abstract-details" >
+      <div className="news-abstract-details" style={ styleColourPalette }>
         { imageElement }
         <div className="news-abstract-title" data-role={ articleUrl } onClick={ this.props.onclick }>
           { title }

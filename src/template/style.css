@@ -1,5 +1,16 @@
+.container {
+  width: 95%;
+  height: 95vh;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.news {
+  padding-top: 15px;
+}
+
 .news-list {
-  height: 100vh;
+  height: 92vh;
   overflow: auto;
   padding: 0 12px;
 }
@@ -23,7 +34,6 @@
   left: 0;
   margin: 15px auto;
   padding: 5px 10px;
-  background-color: lightcoral;
   border-radius: 8px;
 }
 
@@ -64,11 +74,13 @@
 }
 
 .news-display {
-  height: 100vh;
+  height: 92vh;
   overflow: auto;
   background-color: aliceblue;
   background-size: cover;
   background-position: 45% 25%;
+  margin: 0 2%;
+  box-shadow: 0 0 15px 5px rgba( 219, 219, 219, 0.75 );
 }
 
 .news-display-wrapper {
