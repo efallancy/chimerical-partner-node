@@ -29,7 +29,7 @@ To run in development state, run the command below:
 
 ``` npm run dev ```
 
-To build it, make sure to have [Gulp](http://www.gulpjs.com) installed and run the command below:
+To build it, run the command below:
 
 ``` npm run build ```
 
