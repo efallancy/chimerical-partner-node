@@ -22,7 +22,7 @@
 }
 
 .news-list {
-  height: 85vh;
+  height: 84vh;
   overflow: auto;
   padding: 0 12px;
 }
@@ -86,7 +86,7 @@
 }
 
 .news-display {
-  height: 83vh;
+  height: 84vh;
   overflow: auto;
   background-color: aliceblue;
   background-size: cover;
