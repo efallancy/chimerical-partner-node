@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "export NODE_ENV=production && ./node_modules/.bin/gulp clean:public && webpack && ./node_modules/.bin/gulp",
-    "dev": "export NODE_ENV=development && node index.js",
+    "dev": "export NODE_ENV=development && ./node_modules/.bin/gulp build:init && node index.js",
     "start": "node index.js"
   },
   "keywords": [],

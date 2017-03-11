@@ -1,6 +1,5 @@
 var gulp = require( "gulp" );
 var cleanCSS = require( "gulp-clean-css" );
-var runSequence = require( "run-sequence" );
 var del = require( "del" );
 var exec = require( "child_process" ).exec;
 
@@ -21,6 +20,11 @@ gulp.task( "watch", function() {
 
 gulp.task( "clean:public", function() {
   return del.sync( "public" );
+} );
+
+gulp.task( "build:init", function() {
+  exec( "./node_modules/.bin/gulp clean:public" );
+  exec( "./node_modules/.bin/gulp html" );
 } );
 
 gulp.task( "default", [ "html", "minify-css" ] );
