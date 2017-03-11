@@ -1,4 +1,3 @@
-var webpack = require( "webpack" );
 var path = require( "path" );
 var ExtractTextPlugin = require( "extract-text-webpack-plugin" );
 var config = ( process.env.NODE_ENV === "development" ?
@@ -21,7 +20,12 @@ config.module = {
                       include: path.resolve( __dirname, "src" ),
                       use: ExtractTextPlugin.extract( {
                         fallback: "style-loader",
-                        use: "css-loader"
+                        use: [ {
+                          loader: "css-loader",
+                          options: {
+                            url: false
+                          }
+                        } ]
                       })
                     }
                   ]

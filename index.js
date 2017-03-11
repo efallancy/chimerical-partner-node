@@ -28,9 +28,10 @@ if( process.env.NODE_ENV === "development" ) {
 
 }
 
-// Expose the js and css folder...
+// Serve the js, css and assets folder...
 app.use( "/js", express.static( __dirname + "/public/js" ) );
 app.use( "/css", express.static( __dirname + "/public/css" ) );
+app.use( "/assets", express.static( __dirname + "/public/assets" ) );
 
 // Display the main page
 app.get( "/", function( req, res ) {

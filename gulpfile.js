@@ -8,6 +8,11 @@ gulp.task( "html", function() {
              .pipe( gulp.dest( "public" ) );
 } );
 
+gulp.task( "font", function() {
+  return gulp.src( "src/assets/fonts/*.ttf" )
+             .pipe( gulp.dest( "public/assets/fonts" ) );
+})
+
 gulp.task( "minify-css", function() {
   return gulp.src( "public/css/*.css" )
              .pipe( cleanCSS() )
@@ -25,6 +30,7 @@ gulp.task( "clean:public", function() {
 gulp.task( "build:init", function() {
   exec( "./node_modules/.bin/gulp clean:public" );
   exec( "./node_modules/.bin/gulp html" );
+  exec( "./node_modules/.bin/gulp font" );
 } );
 
-gulp.task( "default", [ "html", "minify-css" ] );
+gulp.task( "default", [ "html", "font", "minify-css" ] );

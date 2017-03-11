@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import Title from "../title/Title";
+import Weather from "../weather/Weather";
 
 class AppHeader extends Component {
   render() {
     return (
       <div className="row">
-      Something
+        <Title />
+        <Weather />
       </div>
     );
   }
