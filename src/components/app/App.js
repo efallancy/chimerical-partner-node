@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import News from "../news/News";
+import AppHeader from "./AppHeader";
+import AppBody from "./AppBody";
 
 class App extends Component {
   render() {
     return (
-      <div className="row">
-        <News />
+      <div>
+        <AppHeader />
+        <AppBody />
       </div>
     );
   }
