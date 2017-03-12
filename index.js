@@ -105,6 +105,11 @@ app.get( "/news/categories", function( req, res ) {
 
 } );
 
+// Redirect to main for any undefined route, instead of sending a 404 status/response
+app.use( function( req, res, next ) {
+  res.redirect( "/" );
+} );
+
 app.listen( process.env.PORT || 8080, function() {
   console.log( "listening in port " + ( process.env.PORT || 8080 ) );
 } );

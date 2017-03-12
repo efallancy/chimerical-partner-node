@@ -28,9 +28,10 @@ gulp.task( "clean:public", function() {
 } );
 
 gulp.task( "build:init", function() {
+  // This is implemented in this way to take in order of priorities
   exec( "./node_modules/.bin/gulp clean:public" );
-  exec( "./node_modules/.bin/gulp html" );
   exec( "./node_modules/.bin/gulp font" );
+  exec( "./node_modules/.bin/gulp html" );
 } );
 
 gulp.task( "default", [ "html", "font", "minify-css" ] );
