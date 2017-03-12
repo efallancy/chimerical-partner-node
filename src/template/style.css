@@ -23,7 +23,6 @@
 
 .weather-location, .weather-summary {
   display: block;
-  font-size: 18px;
 }
 
 .weather-location {
@@ -151,7 +150,7 @@
 
 @media (max-width: 550px) {
   .weather-icon {
-    height: 60px;
+    height: 55px;
     position: relative;
     left: 40%;
   }
@@ -160,8 +159,8 @@
     text-align: center;
   }
 
-  .weather-location {
-    font-size: 24px;
+  .ny-times-logo {
+    margin: 2% 0;
   }
 
   .news-display {
