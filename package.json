@@ -1,7 +1,7 @@
 {
   "name": "chimerical-partner-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "A dashboard like app with features of having news feed and weather updates.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,6 @@
     "axios": "^0.15.3",
     "cheerio": "^0.22.0",
     "express": "^4.15.2",
-    "node-geocoder": "^3.16.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.80.0"

@@ -41,7 +41,7 @@ class Weather extends Component {
               // Get the weather forcast
               Util.getWeatherForecast( latitude, longitude )
                   .then( ( weatherResponse ) => {
-                    console.log( weatherResponse.data );
+                    
                     const weatherDetails = {
                       location: location,
                       details: weatherResponse.data.currently

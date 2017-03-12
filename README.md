@@ -17,6 +17,8 @@ Some of the packages being used:
 
 Also note that the API key being used is for Top Stories and the key is not supplied together with the code. To get your own API key, go to [The New York Times Developer](https://developer.nytimes.com/) website.
 
+Not forget to mention, Google reverse geocoding also being used. Hence, the API key can be requested from the [Google Map API](https://developers.google.com/maps/) website.
+
 ### Installation
 
 Run the command below to install its dependencies:
