@@ -105,6 +105,39 @@ app.get( "/news/categories", function( req, res ) {
 
 } );
 
+// Route to get the Weather forecast
+app.get( "/weather_forecast", function( req, res ) {
+
+  var latitude = req.query.lat;
+  var longitude = req.query.lng;
+
+  // Weather forecast endpoint used is from Forecast.io (Also known as Darksky.net)
+  // Get the API key from Darksy.net website and set the key in your environment variable
+  var darkskyKey = process.env.DARK_SKY_SECRET;
+  var url = `https://api.darksky.net/forecast/${ darkskyKey }/${ latitude },${ longitude }?units=si`;
+
+  axios.get( url ).then( function( response ) {
+    res.send( response.data );
+  } )
+
+} );
+
+// Route to reverse geocode location
+app.get( "/location", function( req, res ) {
+  var latitude = req.query.lat;
+  var longitude = req.query.lng;
+
+  var googleGeocodeKey = process.env.GOOGLE_GEOCODING_KEY;
+  var geocodeEndpoint = "https://maps.googleapis.com/maps/api/geocode/json";
+  var geocodeQuery = `?latlng=${ latitude },${ longitude }&key=${ googleGeocodeKey }`
+  var geocodeEndpointRequest = geocodeEndpoint + geocodeQuery;
+
+  axios.get( geocodeEndpointRequest )
+       .then( function( response ) {
+         res.send( response.data );
+       } )
+} );
+
 // Redirect to main for any undefined route, instead of sending a 404 status/response
 app.use( function( req, res, next ) {
   res.redirect( "/" );

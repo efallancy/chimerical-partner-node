@@ -2,14 +2,14 @@ import axios from "axios";
 
 const util = {
   getNewsListFromNYTimes: ( categories = "home" ) => {
-    let endpoint = "/news/categories";
-    let query = `?categories=${ categories }`;
+    const endpoint = "/news/categories";
+    const query = `?categories=${ categories }`;
 
     return axios( endpoint + query );
   },
   getNewsArticleFromNYTimes: ( url ) => {
-    let endpoint = "/news/result";
-    let query = `?url=${ url }`;
+    const endpoint = "/news/result";
+    const query = `?url=${ url }`;
 
     return axios( endpoint + query );
   },
@@ -17,6 +17,23 @@ const util = {
 
     // Make a request to the Giphy API Endpoint
     return axios( "https://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC" );
+  },
+  getWeatherForecast: ( lat, lng ) => {
+
+    const latitude = lat;
+    const longitude = lng;
+    const endpoint = "/weather_forecast";
+    const query = `?lat=${ latitude }&lng=${ longitude }`;
+
+    return axios( endpoint + query )
+  },
+  getLocation: ( lat, lng ) => {
+    const latitude = lat;
+    const longitude = lng;
+    const endpoint = "/location";
+    const query = `?lat=${ latitude }&lng=${ longitude }`;
+
+    return axios( endpoint + query )
   }
 };
 

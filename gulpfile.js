@@ -11,7 +11,12 @@ gulp.task( "html", function() {
 gulp.task( "font", function() {
   return gulp.src( "src/assets/fonts/*.ttf" )
              .pipe( gulp.dest( "public/assets/fonts" ) );
-})
+} );
+
+gulp.task( "icons", function() {
+  return gulp.src( "src/assets/weather_icons/*.svg" )
+             .pipe( gulp.dest( "public/assets/weather_icons" ) );
+} );
 
 gulp.task( "minify-css", function() {
   return gulp.src( "public/css/*.css" )
@@ -30,6 +35,7 @@ gulp.task( "clean:public", function() {
 gulp.task( "build:init", function() {
   // This is implemented in this way to take in order of priorities
   exec( "./node_modules/.bin/gulp clean:public" );
+  exec( "./node_modules/.bin/gulp icons" );
   exec( "./node_modules/.bin/gulp font" );
   exec( "./node_modules/.bin/gulp html" );
 } );
