@@ -40,4 +40,4 @@ gulp.task( "build:init", function() {
   exec( "./node_modules/.bin/gulp html" );
 } );
 
-gulp.task( "default", [ "html", "font", "minify-css" ] );
+gulp.task( "default", [ "html", "font", "icons", "minify-css" ] );
