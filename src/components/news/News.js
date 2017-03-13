@@ -118,6 +118,11 @@ class News extends Component {
 
   }
 
+  componentDidUpdate() {
+    // This is being used to scroll to the top of the news list after every rendering
+    document.querySelector( ".news-abstract-list" ).scrollTop = 0;
+  }
+
   render() {
     const unsplashStyle = {
       backgroundImage: 'url( "https://source.unsplash.com/random" )'
