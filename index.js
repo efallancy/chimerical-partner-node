@@ -28,19 +28,19 @@ if( process.env.NODE_ENV === "development" ) {
 
 }
 
+// Serve the js, css and assets folder...
+app.use( "/js", express.static( __dirname + "/public/js" ) );
+app.use( "/css", express.static( __dirname + "/public/css" ) );
+app.use( "/assets", express.static( __dirname + "/public/assets" ) );
+
 // Ensure that it will serve in https. Hence, a redirect before any other routes.
-app.use( "*", function( req, res, next ) {
-  if( req.header[ "x-forwarded-proto" ] !== "https" ) {
+app.get( "*", function( req, res, next ) {
+  if( req.headers[ "x-forwarded-proto" ] !== "https" && req.hostname !== "localhost" ) {
     res.redirect( "https://" + req.hostname + req.originalUrl );
   } else {
     next();
   }
 } );
-
-// Serve the js, css and assets folder...
-app.use( "/js", express.static( __dirname + "/public/js" ) );
-app.use( "/css", express.static( __dirname + "/public/css" ) );
-app.use( "/assets", express.static( __dirname + "/public/assets" ) );
 
 // Display the main page
 app.get( "/", function( req, res ) {
