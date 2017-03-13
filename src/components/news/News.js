@@ -49,7 +49,7 @@ class News extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // Getting the key identifier to be used for NYTimes API endpoint
     let initial = "";
 
@@ -123,10 +123,10 @@ class News extends Component {
       backgroundImage: 'url( "https://source.unsplash.com/random" )'
     };
 
-    let newsabstract = ( <div>Rendering news</div> );
+    let newsAbstract = ( <div className="news-message">Fetching news...</div> );
 
-    if( this.state.data ) {
-      newsabstract = this.state.data.map( ( news, key ) => {
+    if( this.state.data.length ) {
+      newsAbstract = this.state.data.map( ( news, key ) => {
                         return ( <NewsAbstract
                                     news={ news }
                                     imageFallback={ this.state.imageFallback }
@@ -145,7 +145,7 @@ class News extends Component {
               categories={ this.state.newsCategories }
               onchange={ this.handleSelectionChange.bind( this ) } />
             <div className="news-abstract-list">
-              { newsabstract }
+              { newsAbstract }
             </div>
           </div>
           <NewsDisplay article={ this.state.articleDetails }/>
@@ -160,7 +160,7 @@ class News extends Component {
             categories={ this.state.newsCategories }
             onchange={ this.handleSelectionChange.bind( this ) } />
           <div className="news-abstract-list">
-            { newsabstract }
+            { newsAbstract }
           </div>
         </div>
         <div className="news-display eight columns" style={ unsplashStyle } />

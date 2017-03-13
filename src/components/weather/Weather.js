@@ -41,7 +41,7 @@ class Weather extends Component {
               // Get the weather forcast
               Util.getWeatherForecast( latitude, longitude )
                   .then( ( weatherResponse ) => {
-                    
+
                     const weatherDetails = {
                       location: location,
                       details: weatherResponse.data.currently
@@ -64,12 +64,28 @@ class Weather extends Component {
 
   render() {
 
+    const icons = {
+      "clear-day": "assets/weather_icons/Sun.svg",
+      "clear-night": "assets/weather_icons/Moon.svg",
+      "rain": "assets/weather_icons/Cloud-Rain.svg",
+      "snow": "assets/weather_icons/Snowflake.svg",
+      "sleet": "assets/weather_icons/Cloud-Snow.svg",
+      "wind": "assets/weather_icons/Wind.svg",
+      "fog": "assets/weather_icons/Cloud-Fog.svg",
+      "cloudy": "assets/weather_icons/Cloud.svg",
+      "partly-cloudy-day": "assets/weather_icons/Cloud-Sun.svg",
+      "partly-cloudy-night": "assets/weather_icons/Cloud-Moon.svg",
+      "hail": "assets/weather_icons/Cloud-Hail.svg",
+      "thunderstorm": "assets/weather_icons/Cloud-Lightning.svg",
+      "tornado": "assets/weather_icons/Tornado.svg"
+    };
+
     if( JSON.stringify( this.state.data ) === JSON.stringify( {} )
         && this.state.allowRequest ) {
       return (
         <div className="weather eight columns">
           <div className="weather-message">
-            Loading weather updates.
+            Fetching weather updates...
           </div>
         </div>
       );
@@ -97,7 +113,8 @@ class Weather extends Component {
       <div className="weather eight columns">
         <div className="weather-details row">
           <div className="weather-icon-wrapper four columns">
-            <img className="weather-icon" src="assets/weather_icons/Cloud.svg" />
+            <img className="weather-icon"
+                 src={ icons[ this.state.data.details.icon ] || "assets/weather_icons/Umbrella.svg" } />
           </div>
           <div className="weather-location-summary eight columns">
             <span className="weather-location">
