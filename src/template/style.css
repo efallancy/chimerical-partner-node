@@ -217,7 +217,7 @@
   .news-abstract-list {
     height: 72vh;
   }
-  
+
   .news-display {
     height: 77vh;
   }
@@ -225,16 +225,20 @@
 
 @media (min-width: 1024px) {
   .news-abstract-list {
-    height: 75vh;
+    height: 73vh;
   }
 
   .news-display {
-    height: 82vh;
+    height: 78vh;
   }
 }
 
 @media (min-width: 1440px) {
   .news-abstract-list {
-    height: 80vh;
+    height: 78vh;
+  }
+
+  .news-display {
+    height: 82vh;
   }
 }
