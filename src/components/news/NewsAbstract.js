@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class NewsAbstract extends Component {
+
+  componentDidMount() {
+    // This is being used to scroll to the top of the news list after every rendering
+    // E.g. Every selection of news categories made will render the news list.
+    //      Hence, the news list will scroll to top to display the first news in the list.
+    document.querySelector( ".news-abstract-list" ).scrollTop = 0;
+  }
+
   render() {
     const totalImages = this.props.news.multimedia.length || 0;
     const title = this.props.news.title;
