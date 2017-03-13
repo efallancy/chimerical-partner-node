@@ -17,7 +17,7 @@ class Weather extends Component {
     this.getWeatherRequest();
 
     // Then, update it every 15 mins
-    setInterval( this.getWeatherRequest, 1000 * 60 * 15 );
+    setInterval( this.getWeatherRequest.bind( this ), 1000 * 60 * 15 );
   }
 
   getWeatherRequest() {
@@ -27,6 +27,7 @@ class Weather extends Component {
         supported: false
       } )
     } else {
+
       navigator.geolocation.getCurrentPosition( ( position ) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
@@ -46,7 +47,7 @@ class Weather extends Component {
                       location: location,
                       details: weatherResponse.data.currently
                     };
-
+                    
                     this.setState( {
                       data: weatherDetails
                     } );
