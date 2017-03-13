@@ -204,6 +204,10 @@
     height: 70vh
   }
 
+  .news-display {
+    height: 76vh;
+  }
+
   .news-abstract-details:hover {
     top: -3px;
     left: 3px;
