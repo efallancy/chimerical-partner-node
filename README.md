@@ -1,23 +1,15 @@
 # Chimerical Partner
 > [Chimerical](https://chimerical.herokuapp.com) - In Node JS
 
-> News feed, dashboard like app. Powered by New York Times.
+> News feed, dashboard like app. Powered by New York Times, Forecast.IO and Google Maps.
 
 This is an app that I built as a remake to the [Chimerical Partner](https://chimerical-partner.herokuapp.com) that I made using Ruby on Rails.
 
 Made using Express, React, Cheerio, Babel (as transpiler for ES6 and React), Webpack, Request and axios.
 
-Some of the packages being used:
-- css-loader
-- style-loader
-- webpack-dev-middleware
-- webpack-hot-middleware
+Also note that the API key being used for news is the Top Stories and the key is not supplied together with the code. To get your own API key, go to [The New York Times Developer](https://developer.nytimes.com/) website.
 
-> **Still under progress.**
-
-Also note that the API key being used is for Top Stories and the key is not supplied together with the code. To get your own API key, go to [The New York Times Developer](https://developer.nytimes.com/) website.
-
-Not forget to mention, Google reverse geocoding also being used. Hence, the API key can be requested from the [Google Map API](https://developers.google.com/maps/) website.
+Not forget to mention, Google reverse geocoding and Forecast.IO for weather are also being used. Hence, the API key can be requested from the [Google Maps API](https://developers.google.com/maps/) website and [Forecast.IO](https://darksky.net) for the weather API key.
 
 ### Installation
 
@@ -25,9 +17,13 @@ Run the command below to install its dependencies:
 
 ``` npm install ```
 
+To start the application, run the command below:
+
+``` npm run start ```
+
 ### Run it
 
-To run in development state, run the command below:
+For development, run the command below:
 
 ``` npm run dev ```
 
@@ -35,6 +31,8 @@ To build it, run the command below:
 
 ``` npm run build ```
 
-To run it in production environment, make sure to run the build first before deploying it or run it in production environment, run the command below:
-
-``` npm run start ```
+### Future Work
+- Create test
+- Refactoring
+- Proper config to run across different setup or environment
+- Additional features? Maybe?
