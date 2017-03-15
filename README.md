@@ -11,17 +11,17 @@ Also note that the API key being used for news is the Top Stories and the key is
 
 Not forget to mention, Google reverse geocoding and Forecast.IO for weather are also being used. Hence, the API key can be requested from the [Google Maps API](https://developers.google.com/maps/) website and [Forecast.IO](https://darksky.net) for the weather API key.
 
-### Installation
+### Running the application
 
 Run the command below to install its dependencies:
 
 ``` npm install ```
 
-To start the application, run the command below:
+and start the application, by running the command below:
 
 ``` npm run start ```
 
-### Run it
+### Development
 
 For development, run the command below:
 
